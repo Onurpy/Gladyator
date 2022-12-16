@@ -8,13 +8,13 @@ public class AnaMenu {
     private int secim1;
     private String secim2;
     private Connection con;
-    //private Kahraman kahraman;
+    private Kahraman kahraman;
+    Scanner input1 = new Scanner(System.in);
     public AnaMenu(){
         menu();
     }
     public void menu(){
         try{
-            Scanner input1 = new Scanner(System.in);
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gladyator","root","Gladyator.root!720");
             this.stmt=con.createStatement();
             this.rs=this.stmt.executeQuery("select * from oyunlar");
@@ -99,7 +99,6 @@ public class AnaMenu {
     public void satirYazdir(int satir){
 
         try{
-            Scanner input2 = new Scanner(System.in);
             this.rs=stmt.executeQuery("select * from oyunlar where idOyunlar = "+satir);
             this.rs.next();
             System.out.println("Kahramanın İsmi: "+this.rs.getString(3));
@@ -116,15 +115,15 @@ public class AnaMenu {
             if(rs.getInt(13) == 0) Durum = "Savaşta Değil"; else Durum = "Savaşta";
             System.out.println("Kahramanın Savaşma Durumu: "+Durum);
             System.out.println("Bu Oyuna Devam Etmek İçin 'E/y' Bir Onceki Menüye Donmek İçin 'H/n' Tuşlarına Basın.");
-            this.secim2 = input2.nextLine();
+            this.secim2 = input1.nextLine();
             System.out.println(this.secim2);
             if(this.secim2.equals("E") || this.secim2.equals("e") || this.secim2.equals("y") || this.secim2.equals("Y")){
-                input2.close();
+                input1.close();
                 System.out.println("Oyuna Giriş yapılıyor...");
                 Thread.sleep(2000);
                 this.stmt.executeUpdate("UPDATE `gladyator`.`oyunlar` SET `oyunNo` = '10"+ satir +"' WHERE (`idOyunlar` = '" + satir +"')");
                 //new Kayit(this.kahraman);
-                //new Oyun(this.kahraman);
+                new Oyun(this.kahraman);
             }else{
                 menu();
             }

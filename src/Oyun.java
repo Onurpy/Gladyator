@@ -22,11 +22,11 @@ public class Oyun {
         input.nextLine();
         switch (this.secim) {
             case 1:
-                //this.kahraman.ozellikleriGoster();
+                this.kahraman.ozellikleriGoster();
                 menu();
                 break;
             case 2:
-                new Market(this.kahraman);
+                //new Market(this.kahraman);
                 menu();
                 break;
             case 3:
