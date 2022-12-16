@@ -1,6 +1,6 @@
 
 public class Kahraman extends Canli {
-	private boolean savasdurum=false;
+	private boolean savasDurumu=false;
 	private int id;
 	private String isim;
 	private String kilicIsmi="Tahta";
@@ -25,11 +25,11 @@ public class Kahraman extends Canli {
 		 this.pot=pot;
 	 }
 
-	 public boolean getSavasdurum() {
-		return savasdurum;
+	 public boolean getSavasDurumu() {
+		return this.savasDurumu;
 	}
-	public void setSavasdurum(boolean savasdurum) {
-		this.savasdurum = savasdurum;
+	public void setSavasDurum(boolean savasDurumu) {
+		this.savasDurumu = savasDurumu;
 	}
 	
 	public int getId() {
@@ -125,7 +125,7 @@ public class Kahraman extends Canli {
 		 System.out.println("Para= "+this.para);
 		 System.out.println("Deneyim= "+this.deneyim);
 		 System.out.println("Mana= "+this.mana);
-		 System.out.println("Savas durumu= "+this.savasdurum);
+		 System.out.println("Savas durumu= "+this.savasDurumu);
 		 
 	 }
 

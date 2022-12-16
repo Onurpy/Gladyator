@@ -11,7 +11,7 @@ public class Dusman extends Canli{
 		return this.ganimeti;
 	}
 	@Override
-	public void ozellileriGoster() {
+	public void ozellikleriGoster() {
 		System.out.println("Isim= "+isim);
 		System.out.println("Can= "+this.getCan());
 		System.out.println("Hasar= "+this.getHasar());

@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Oyun {
     private Kahraman kahraman;
     private int secim;
-    private String secim1;
     public Oyun(Kahraman kahraman){
         this.kahraman = kahraman;
         menu();
@@ -47,9 +46,10 @@ public class Oyun {
                 break;
         
             default:
-            System.out.println("Lütfen 1-2-3-4 Sayılarından Birini Girin.");
-            menu();
+                System.out.println("Lütfen 1-2-3-4 Sayılarından Birini Girin.");
+                menu();
                 break;
         }
+        input.close();
     }
 }
